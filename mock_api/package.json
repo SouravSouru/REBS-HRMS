@@ -1,0 +1,16 @@
+{
+  "name": "rebs-hrms-mock-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "In-memory mock API for the REBS HRMS Flutter take-home",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "reset": "curl -X POST http://localhost:3000/admin/reset"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "uuid": "^11.1.0"
+  }
+}
