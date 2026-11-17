@@ -105,6 +105,12 @@ adb emu geo fix 77.5946 12.9716
 
 Office default: `12.9716, 77.5946`, 200 m radius, timezone `Asia/Kolkata`.
 
+## Demo video
+
+Walkthrough of the app (check-in / out, offline sync, leave):
+
+[`doc/Android Emulator - Pixel_6_API_35_5554 2026-11-17 21-15-39.mp4`](doc/Android%20Emulator%20-%20Pixel_6_API_35_5554%202026-11-17%2021-15-39.mp4)
+
 ## Notes
 
 - One check-in / check-out per company day (no overnight shifts)
