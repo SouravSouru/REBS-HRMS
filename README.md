@@ -22,9 +22,27 @@ npm start
 ```
 
 Runs on `http://localhost:3000`.  
-Emulator → use `http://10.0.2.2:3000` (this is already the default in the app).
+Emulator → use `http://10.0.2.2:3000` (already the default in `app_config.dart`).
 
-**2. App**
+**2. App config (edit this for testing)**
+
+All app settings are static in `lib/core/config/app_config.dart`:
+
+```dart
+static const AppConfig defaults = AppConfig(
+  apiBaseUrl: 'http://10.0.2.2:3000', // emulator → host machine
+  officeLat: 12.9716,
+  officeLng: 77.5946,
+  radiusMeters: 200,
+  companyTimezone: 'Asia/Kolkata',
+);
+```
+
+- Emulator: keep `apiBaseUrl` as `http://10.0.2.2:3000`
+- Real phone: set `apiBaseUrl` to your PC’s LAN IP (same Wi‑Fi), e.g. `http://192.168.1.10:3000`
+- Change office lat/lng, radius, or timezone in that same file, then hot restart / rebuild
+
+**3. App**
 
 ```bash
 flutter pub get
@@ -32,15 +50,7 @@ dart run build_runner build --delete-conflicting-outputs
 flutter run
 ```
 
-Optional:
-
-```bash
-flutter run --dart-define=API_BASE_URL=http://10.0.2.2:3000
-```
-
-For a real phone, point `API_BASE_URL` at your PC’s LAN IP (same Wi‑Fi) while the mock is running.
-
-**3. Tests**
+**4. Tests**
 
 ```bash
 flutter test
@@ -103,7 +113,7 @@ Emulator GPS:
 adb emu geo fix 77.5946 12.9716
 ```
 
-Office default: `12.9716, 77.5946`, 200 m radius, timezone `Asia/Kolkata`.
+Office defaults match `app_config.dart`: `12.9716, 77.5946`, 200 m radius, timezone `Asia/Kolkata`. Edit that file to change them.
 
 ## Demo video
 
